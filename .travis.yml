@@ -14,7 +14,6 @@ os: linux
 
 matrix:
   include:
-    - dist: trusty
     - dist: xenial
   exclude:
     - dist: trusty
