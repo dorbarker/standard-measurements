@@ -12,14 +12,13 @@ perl:
 
 os: linux
 
+dist:
+  - trusty
+  - xenial
+
 matrix:
-  include:
-    - dist: trusty
-    - dist: xenial
-    
   exclude:
-    - os: linux
-      dist: trusty
+    - dist: trusty
       python: "3.7"
 
 before_install:
