@@ -2,19 +2,19 @@ language: python
 
 # Try a large OS matrix because the goal is compatibility
 # https://docs.travis-ci.com/user/reference/overview/
+python:
+  - "3.6"
+  - "3.7"
+
+perl:
+  - "5.26-shrplib"
+
 matrix:
   include:
-    - os: linux
-      dist: precise
     - os: linux
       dist: trusty
     - os: linux
       dist: xenial
-  python:
-    - "3.6"
-    - "3.7"
-  perl:
-    - "5.26-shrplib"
 
 before_install:
   # Install very specific versions of libraries
@@ -26,7 +26,7 @@ before_install:
   - export PERL5LIB=$PERL5LIB:$(pwd)/lib/perl5
 
 install:
-  - python3 -m pip install biopython==1.72
+  - pip install biopython==1.72
 
 script: bash tests/alltests.sh 
 
