@@ -2,6 +2,7 @@ language: python
 
 # Try a large OS matrix because the goal is compatibility
 # https://docs.travis-ci.com/user/reference/overview/
+
 python:
   - "3.6"
   - "3.7"
@@ -12,9 +13,19 @@ perl:
 matrix:
   include:
     - os: linux
+      dist: precise
+    - os: linux
       dist: trusty
     - os: linux
       dist: xenial
+
+  exclude:
+    - os: linux
+      dist: trusty
+      python: "3.7"
+    - os: linux
+      dist: trusty
+      python: "3.7"
 
 before_install:
   # Install very specific versions of libraries
