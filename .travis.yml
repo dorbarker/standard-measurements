@@ -10,19 +10,15 @@ python:
 perl:
   - "5.26-shrplib"
 
-matrix:
-  include:
-    - os: linux
-      dist: precise
-    - os: linux
-      dist: trusty
-    - os: linux
-      dist: xenial
+os:
+  - linux
 
+dist:
+  - trusty
+  - xenial
+
+matrix:
   exclude:
-    - os: linux
-      dist: trusty
-      python: "3.7"
     - os: linux
       dist: trusty
       python: "3.7"
